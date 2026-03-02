@@ -58,6 +58,7 @@ jobs:
       - name: Upload
         # 使用 gh release create 更加统一
         run: |
+          VERSION=${{ needs.check-version.outputs.version }}
           gh release create ${{ needs.check-version.outputs.version }} \
             --title "Release ${{ needs.check-version.outputs.version }}" \
             --notes "Automated build for version ${{ needs.check-version.outputs.version }} based on ${{ env.UPSTREAM_OWNER }}/${{ env.UPSTREAM_REPO }}" \
