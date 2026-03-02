@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x;
+set -ex;
 
 org='opencontainers'
 proj='runc'
@@ -11,6 +11,7 @@ test() {
     local version=${version#v}
     docker build -t ${builder} .
     docker run --rm -v$(pwd):/workspace -e RUNC_VERSION=${version} ${builder}
+    docker rmi ${builder}
 }
 
 test
