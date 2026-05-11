@@ -3,7 +3,8 @@ FROM lcr.loongnix.cn/library/debian:unstable
 RUN apt update && apt install -y git \
     golang \
     make \
-    libseccomp-dev
+    libseccomp-dev \
+    build-essential
 
 ENV RUNC_VERSION=''
 
