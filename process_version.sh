@@ -29,7 +29,7 @@ fetch_source_code()
 
 build(){
     pushd "${build_root}"
-        make static
+        make
     popd
 }
 
